@@ -3,7 +3,7 @@ module BM (ldA,clrA,sftA,ldQ,sftQ,clrQ,decr,ldcnt,data_in,clk,qm1,Q0,clrff,ldM,a
     input [4:0] data_in;
     input ldA,clrA,sftA,ldQ,sftQ,clrQ,decr,ldcnt,clrff,ldM,addsub,clk; 
     output qm1,Q0;
-    output [7:0] MUL;
+    output [9:0] MUL;
     wire [4:0] A,M,Z,Q;
     output [4:0] count;
     assign Q0 = Q[0];
