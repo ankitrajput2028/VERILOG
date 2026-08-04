@@ -1,0 +1,127 @@
+$date
+	Thu May 07 19:52:29 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module DUT $end
+$var wire 32 ! rddata1 [31:0] $end
+$var wire 32 " rddata2 [31:0] $end
+$var reg 1 # clk $end
+$var reg 5 $ dr [4:0] $end
+$var reg 5 % sr1 [4:0] $end
+$var reg 5 & sr2 [4:0] $end
+$var reg 32 ' wrdata [31:0] $end
+$var reg 1 ( write $end
+$scope module R1 $end
+$var wire 1 ) clk $end
+$var wire 5 * dr [4:0] $end
+$var wire 32 + rddata1 [31:0] $end
+$var wire 32 , rddata2 [31:0] $end
+$var wire 5 - sr1 [4:0] $end
+$var wire 5 . sr2 [4:0] $end
+$var wire 32 / wrdata [31:0] $end
+$var wire 1 0 write $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+00
+b0 /
+b0 .
+b0 -
+bx ,
+bx +
+b0 *
+0)
+0(
+b0 '
+b0 &
+b0 %
+b0 $
+0#
+bx "
+bx !
+$end
+#5000
+1#
+1)
+#10000
+0#
+0)
+b100000000 '
+b100000000 /
+1(
+10
+#15000
+b100000000 !
+b100000000 +
+b100000000 "
+b100000000 ,
+1#
+1)
+#20000
+0#
+0)
+b1000000000 '
+b1000000000 /
+b1 $
+b1 *
+#25000
+1#
+1)
+#30000
+0#
+0)
+b1100000000 '
+b1100000000 /
+b10 $
+b10 *
+#35000
+1#
+1)
+#40000
+0#
+0)
+b10000000000 '
+b10000000000 /
+b11 $
+b11 *
+#45000
+1#
+1)
+#50000
+0#
+0)
+b1 &
+b1 .
+b1000000000 "
+b1000000000 ,
+0(
+00
+#55000
+1#
+1)
+#60000
+0#
+0)
+#61000
+b11 &
+b11 .
+b10000000000 "
+b10000000000 ,
+b10 %
+b10 -
+b1100000000 !
+b1100000000 +
+#65000
+1#
+1)
+#70000
+0#
+0)
+#72000

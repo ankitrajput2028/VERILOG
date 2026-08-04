@@ -1,5 +1,5 @@
 `timescale 1ns/1ps
-module booth (clk,rst,start,X,Y,Z,valid);
+module booth (clk,rst,start,X,Y,Z,valid); //important
     input clk,rst,start;
     input signed [3:0] X,Y;
     output reg signed [7:0] Z;
@@ -14,7 +14,7 @@ module booth (clk,rst,start,X,Y,Z,valid);
 
     always @(posedge clk or negedge rst) 
     begin
-        if (!rst)
+        if (!rst) // reset and then give a start signal
         begin
             Z <= 8'd0;
             pre_state <= 1'b0;
