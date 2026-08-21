@@ -4,221 +4,245 @@
 :vpi_module "system";
 :vpi_module "v2005_math";
 :vpi_module "va_math";
-S_01123550 .scope module, "DUT" "DUT" 2 2;
+S_011A5548 .scope module, "DUT" "DUT" 2 2;
  .timescale -9 -12;
-P_0120CE04 .param/l "DATA_WIDTH" 2 5, +C4<0100000>;
-P_0120CE18 .param/l "FIFOHALF" 2 6, +C4<0100>;
-P_0120CE2C .param/l "FIFO_DEPTH" 2 4, +C4<01000>;
-v01130BB8_0 .var "clk", 0 0;
-v01131240_0 .var "cs", 0 0;
-v011312F0_0 .var "data_in", 31 0;
-v01130C10_0 .net "data_out", 31 0, v01203288_0; 1 drivers
-v01130C68_0 .net "empty", 0 0, L_01131190; 1 drivers
-v01131030_0 .net "full", 0 0, L_01125560; 1 drivers
-v01130F80_0 .var/i "k", 31 0;
-v01130CC0_0 .var "rd_en", 0 0;
-v01130D18_0 .var "rst", 0 0;
-v01130ED0_0 .var "wr_en", 0 0;
-E_011258D0 .event posedge, v0120B600_0;
-S_01122D58 .scope module, "F1" "FIFOSYNC" 2 13, 3 2, S_01123550;
+P_0117D68C .param/l "DATA_WIDTH" 2 5, +C4<0100000>;
+P_0117D6A0 .param/l "FIFOHALF" 2 6, +C4<0100>;
+P_0117D6B4 .param/l "FIFO_DEPTH" 2 4, +C4<01000>;
+v011A75D8_0 .var "clk", 0 0;
+v011A7948_0 .var "cs", 0 0;
+v011A7478_0 .var "data_in", 31 0;
+v011E63D8_0 .net "data_out", 31 0, v011A79F8_0; 1 drivers
+v011E6430_0 .net "empty", 0 0, L_011E5C48; 1 drivers
+v011E6170_0 .net "full", 0 0, L_011A27B8; 1 drivers
+v011E5D50_0 .var/i "k", 31 0;
+v011E65E8_0 .var "rd_en", 0 0;
+v011E60C0_0 .var "rst", 0 0;
+v011E6278_0 .var "wr_en", 0 0;
+E_011AD150 .event posedge, v011A7B00_0;
+S_011A55D0 .scope module, "F1" "FIFOSYNC" 2 13, 3 3, S_011A5548;
  .timescale -9 -12;
-P_0120D044 .param/l "DATA_WIDTH" 3 4, +C4<0100000>;
-P_0120D058 .param/l "FIFO_DEPTH" 3 3, +C4<01000>;
-P_0120D06C .param/l "FIFO_DEPTHLOG" 3 5, +C4<00000000000000000000000000000011>;
-L_01125330 .functor NOT 1, L_011310E0, C4<0>, C4<0>, C4<0>;
-L_011254F0 .functor XNOR 1, L_01130F28, L_01125330, C4<0>, C4<0>;
-L_01125560 .functor AND 1, L_011254F0, L_011615B8, C4<1>, C4<1>;
-v012037F0_0 .net *"_s11", 2 0, L_01131138; 1 drivers
-v01203848_0 .net *"_s13", 2 0, L_01130FD8; 1 drivers
-v011243C8_0 .net *"_s14", 0 0, L_011615B8; 1 drivers
-v01124420_0 .net *"_s3", 0 0, L_01130F28; 1 drivers
-v0120A6D0_0 .net *"_s5", 0 0, L_011310E0; 1 drivers
-v0120A728_0 .net *"_s6", 0 0, L_01125330; 1 drivers
-v0120B5A8_0 .net *"_s8", 0 0, L_011254F0; 1 drivers
-v0120B600_0 .net "clk", 0 0, v01130BB8_0; 1 drivers
-v0120B658_0 .net "cs", 0 0, v01131240_0; 1 drivers
-v01203230_0 .net "data_in", 31 0, v011312F0_0; 1 drivers
-v01203288_0 .var "data_out", 31 0;
-v012032E0_0 .alias "empty", 0 0, v01130C68_0;
-v01130D70 .array "fifo", 0 7, 31 0;
-v01130E78_0 .alias "full", 0 0, v01131030_0;
-v01131088_0 .var "rd_addr", 3 0;
-v01130DC8_0 .net "rd_en", 0 0, v01130CC0_0; 1 drivers
-v01130E20_0 .net "rst", 0 0, v01130D18_0; 1 drivers
-v01131298_0 .var "wr_addr", 3 0;
-v011311E8_0 .net "wr_en", 0 0, v01130ED0_0; 1 drivers
-E_011259D0/0 .event negedge, v01130E20_0;
-E_011259D0/1 .event posedge, v0120B600_0;
-E_011259D0 .event/or E_011259D0/0, E_011259D0/1;
-L_01131190 .cmp/eq 4, v01131298_0, v01131088_0;
-L_01130F28 .part v01131298_0, 3, 1;
-L_011310E0 .part v01131088_0, 3, 1;
-L_01131138 .part v01131298_0, 0, 3;
-L_01130FD8 .part v01131088_0, 0, 3;
-L_011615B8 .cmp/eq 3, L_01131138, L_01130FD8;
-    .scope S_01122D58;
+P_0117CF3C .param/l "DATA_WIDTH" 3 16, +C4<0100000>;
+P_0117CF50 .param/l "FIFO_DEPTH" 3 15, +C4<01000>;
+P_0117CF64 .param/l "FIFO_DEPTHLOG" 3 17, +C4<00000000000000000000000000000011>;
+L_011A2BE0 .functor NOT 1, L_011E6220, C4<0>, C4<0>, C4<0>;
+L_011A2CC0 .functor XNOR 1, L_011E6640, L_011A2BE0, C4<0>, C4<0>;
+L_011A27B8 .functor AND 1, L_011A2CC0, L_011E6118, C4<1>, C4<1>;
+v011A7738_0 .net *"_s11", 2 0, L_011E5EB0; 1 drivers
+v011A74D0_0 .net *"_s13", 2 0, L_011E66F0; 1 drivers
+v011A7790_0 .net *"_s14", 0 0, L_011E6118; 1 drivers
+v011A7AA8_0 .net *"_s3", 0 0, L_011E6640; 1 drivers
+v011A77E8_0 .net *"_s5", 0 0, L_011E6220; 1 drivers
+v011A79A0_0 .net *"_s6", 0 0, L_011A2BE0; 1 drivers
+v011A7528_0 .net *"_s8", 0 0, L_011A2CC0; 1 drivers
+v011A7B00_0 .net "clk", 0 0, v011A75D8_0; 1 drivers
+v011A7840_0 .net "cs", 0 0, v011A7948_0; 1 drivers
+v011A7A50_0 .net "data_in", 31 0, v011A7478_0; 1 drivers
+v011A79F8_0 .var "data_out", 31 0;
+v011A7688_0 .alias "empty", 0 0, v011E6430_0;
+v011A7898 .array "fifo", 0 7, 31 0;
+v011A76E0_0 .alias "full", 0 0, v011E6170_0;
+v011A7630_0 .var "rd_addr", 3 0;
+v011A73C8_0 .net "rd_en", 0 0, v011E65E8_0; 1 drivers
+v011A7420_0 .net "rst", 0 0, v011E60C0_0; 1 drivers
+v011A7580_0 .var "wr_addr", 3 0;
+v011A78F0_0 .net "wr_en", 0 0, v011E6278_0; 1 drivers
+E_011AD090/0 .event negedge, v011A7420_0;
+E_011AD090/1 .event posedge, v011A7B00_0;
+E_011AD090 .event/or E_011AD090/0, E_011AD090/1;
+L_011E5C48 .cmp/eq 4, v011A7580_0, v011A7630_0;
+L_011E6640 .part v011A7580_0, 3, 1;
+L_011E6220 .part v011A7630_0, 3, 1;
+L_011E5EB0 .part v011A7580_0, 0, 3;
+L_011E66F0 .part v011A7630_0, 0, 3;
+L_011E6118 .cmp/eq 3, L_011E5EB0, L_011E66F0;
+    .scope S_011A55D0;
 T_0 ;
-    %wait E_011259D0;
-    %load/v 8, v01130E20_0, 1;
+    %wait E_011AD090;
+    %load/v 8, v011A7420_0, 1;
     %inv 8, 1;
     %jmp/0xz  T_0.0, 8;
     %ix/load 0, 4, 0;
-    %assign/v0 v01131298_0, 0, 0;
+    %assign/v0 v011A7580_0, 0, 0;
     %jmp T_0.1;
 T_0.0 ;
-    %load/v 8, v0120B658_0, 1;
-    %load/v 9, v011311E8_0, 1;
+    %load/v 8, v011A7840_0, 1;
+    %load/v 9, v011A78F0_0, 1;
     %and 8, 9, 1;
-    %load/v 9, v01130E78_0, 1;
+    %load/v 9, v011A76E0_0, 1;
     %inv 9, 1;
     %and 8, 9, 1;
     %jmp/0xz  T_0.2, 8;
-    %load/v 8, v01203230_0, 32;
-    %load/v 40, v01131298_0, 3; Only need 3 of 4 bits
+    %load/v 8, v011A7A50_0, 32;
+    %load/v 40, v011A7580_0, 3; Only need 3 of 4 bits
 ; Save base=40 wid=3 in lookaside.
     %ix/get 3, 40, 3;
     %jmp/1 t_0, 4;
     %ix/load 0, 32, 0; word width
     %ix/load 1, 0, 0; part off
-    %assign/av v01130D70, 0, 8;
+    %assign/av v011A7898, 0, 8;
 t_0 ;
-    %load/v 8, v01131298_0, 4;
-    %mov 12, 0, 28;
-    %addi 8, 1, 32;
+    %ix/load 0, 1, 0;
+    %load/vp0 8, v011A7580_0, 4;
     %ix/load 0, 4, 0;
-    %assign/v0 v01131298_0, 0, 8;
+    %assign/v0 v011A7580_0, 0, 8;
 T_0.2 ;
 T_0.1 ;
     %jmp T_0;
     .thread T_0;
-    .scope S_01122D58;
+    .scope S_011A55D0;
 T_1 ;
-    %wait E_011259D0;
-    %load/v 8, v01130E20_0, 1;
+    %wait E_011AD090;
+    %load/v 8, v011A7420_0, 1;
     %inv 8, 1;
     %jmp/0xz  T_1.0, 8;
     %ix/load 0, 4, 0;
-    %assign/v0 v01131088_0, 0, 0;
+    %assign/v0 v011A7630_0, 0, 0;
+    %ix/load 0, 32, 0;
+    %assign/v0 v011A79F8_0, 0, 0;
     %jmp T_1.1;
 T_1.0 ;
-    %load/v 8, v0120B658_0, 1;
-    %load/v 9, v01130DC8_0, 1;
+    %load/v 8, v011A7840_0, 1;
+    %load/v 9, v011A73C8_0, 1;
     %and 8, 9, 1;
-    %load/v 9, v012032E0_0, 1;
+    %load/v 9, v011A7688_0, 1;
     %inv 9, 1;
     %and 8, 9, 1;
     %jmp/0xz  T_1.2, 8;
-    %load/v 40, v01131088_0, 3; Only need 3 of 4 bits
+    %load/v 40, v011A7630_0, 3; Only need 3 of 4 bits
 ; Save base=40 wid=3 in lookaside.
     %ix/get 3, 40, 3;
-    %load/av 8, v01130D70, 32;
+    %load/av 8, v011A7898, 32;
     %ix/load 0, 32, 0;
-    %assign/v0 v01203288_0, 0, 8;
-    %load/v 8, v01131088_0, 4;
-    %mov 12, 0, 28;
-    %addi 8, 1, 32;
+    %assign/v0 v011A79F8_0, 0, 8;
+    %ix/load 0, 1, 0;
+    %load/vp0 8, v011A7630_0, 4;
     %ix/load 0, 4, 0;
-    %assign/v0 v01131088_0, 0, 8;
+    %assign/v0 v011A7630_0, 0, 8;
 T_1.2 ;
 T_1.1 ;
     %jmp T_1;
     .thread T_1;
-    .scope S_01123550;
+    .scope S_011A5548;
 T_2 ;
     %delay 5000, 0;
-    %load/v 8, v01130BB8_0, 1;
+    %load/v 8, v011A75D8_0, 1;
     %inv 8, 1;
-    %set/v v01130BB8_0, 8, 1;
+    %set/v v011A75D8_0, 8, 1;
     %jmp T_2;
     .thread T_2;
-    .scope S_01123550;
+    .scope S_011A5548;
 T_3 ;
-    %set/v v01130BB8_0, 0, 1;
-    %set/v v01130D18_0, 0, 1;
-    %set/v v01131240_0, 0, 1;
-    %set/v v01130CC0_0, 0, 1;
-    %set/v v01130ED0_0, 0, 1;
-    %vpi_call 2 24 "$display", "time : %d, Empty : %d", $time, v01130C68_0;
+    %set/v v011A75D8_0, 0, 1;
+    %set/v v011E60C0_0, 0, 1;
+    %set/v v011A7948_0, 0, 1;
+    %set/v v011E65E8_0, 0, 1;
+    %set/v v011E6278_0, 0, 1;
+    %vpi_call 2 23 "$display", "Scenario1 checking empty port";
+    %vpi_call 2 24 "$display", "______________________________";
+    %delay 2000, 0;
+    %vpi_call 2 27 "$display", "time : %d, Empty : %d", $time, v011E6430_0;
     %delay 10000, 0;
-    %set/v v01130D18_0, 1, 1;
-    %set/v v01130ED0_0, 1, 1;
-    %set/v v01131240_0, 1, 1;
-    %set/v v01130F80_0, 0, 32;
+    %set/v v011E60C0_0, 1, 1;
+    %vpi_call 2 31 "$display", "================================";
+    %vpi_call 2 33 "$display", "Scenario2 checking full port port";
+    %vpi_call 2 34 "$display", "______________________________";
+    %set/v v011A7478_0, 0, 32;
+    %set/v v011E6278_0, 1, 1;
+    %set/v v011A7948_0, 1, 1;
+    %set/v v011E5D50_0, 0, 32;
 T_3.0 ;
-    %load/v 8, v01130F80_0, 32;
+    %load/v 8, v011E5D50_0, 32;
    %cmpi/s 8, 8, 32;
     %jmp/0xz T_3.1, 5;
-    %wait E_011258D0;
-    %load/v 8, v01130F80_0, 32;
+    %load/v 8, v011E5D50_0, 32;
     %muli 8, 2, 32;
-    %ix/load 0, 32, 0;
-    %assign/v0 v011312F0_0, 0, 8;
+    %set/v v011A7478_0, 8, 32;
+    %wait E_011AD150;
+    %delay 1000, 0;
+    %vpi_call 2 46 "$display", "Time = %0t, FIFO[%0d] = %0d", $time, v011E5D50_0, &A<v011A7898, v011E5D50_0 >;
     %ix/load 0, 1, 0;
-    %load/vp0/s 8, v01130F80_0, 32;
-    %set/v v01130F80_0, 8, 32;
+    %load/vp0/s 8, v011E5D50_0, 32;
+    %set/v v011E5D50_0, 8, 32;
     %jmp T_3.0;
 T_3.1 ;
-    %wait E_011258D0;
-    %set/v v01130ED0_0, 0, 1;
-    %vpi_call 2 36 "$display", "time : %d, Full : %d, Empty : %d", $time, v01131030_0, v01130C68_0;
-    %wait E_011258D0;
-    %set/v v01130ED0_0, 1, 1;
+    %set/v v011E6278_0, 0, 1;
+    %delay 1000, 0;
+    %vpi_call 2 55 "$display", "FULL  = %0d", v011E6170_0;
+    %vpi_call 2 56 "$display", "EMPTY = %0d", v011E6430_0;
+    %vpi_call 2 57 "$display", "================================";
+    %vpi_call 2 60 "$display", "Scenario3 Writing after full stack (it doesn't write until read occurs)";
+    %vpi_call 2 61 "$display", "______________________________________________________________________";
+    %wait E_011AD150;
+    %set/v v011E6278_0, 1, 1;
+    %vpi_call 2 65 "$display", "================================";
     %movi 8, 2, 3;
 T_3.2 %cmp/s 0, 8, 3;
     %jmp/0xz T_3.3, 5;
     %add 8, 1, 3;
-    %wait E_011258D0;
-    %load/v 11, v01130F80_0, 32;
+    %wait E_011AD150;
+    %load/v 11, v011E5D50_0, 32;
     %muli 11, 3, 32;
-    %ix/load 0, 32, 0;
-    %assign/v0 v011312F0_0, 0, 11;
-    %vpi_call 2 46 "$display", "Time : %d , FIFOvalue : %d", $time, &A<v01130D70, 1>;
+    %set/v v011A7478_0, 11, 32;
+    %vpi_call 2 70 "$display", "Time : %d , FIFOvalue : %d", $time, &A<v011A7898, 0>;
     %jmp T_3.2;
 T_3.3 ;
-    %set/v v01130ED0_0, 0, 1;
+    %vpi_call 2 72 "$display", "================================";
+    %set/v v011E6278_0, 0, 1;
     %delay 1000, 0;
-    %set/v v01130D18_0, 0, 1;
+    %set/v v011E60C0_0, 0, 1;
     %delay 1000, 0;
-    %set/v v01130D18_0, 1, 1;
-    %set/v v01130F80_0, 0, 32;
-    %set/v v01130ED0_0, 1, 1;
-    %load/v 8, v01130F80_0, 32;
-    %muli 8, 4, 32;
-    %ix/load 0, 32, 0;
-    %assign/v0 v011312F0_0, 0, 8;
-    %wait E_011258D0;
-    %movi 8, 1, 32;
-    %set/v v01130F80_0, 8, 32;
+    %set/v v011E60C0_0, 1, 1;
+    %vpi_call 2 79 "$display", "Scenario4 Writing upto 3 stack and then reading upto 3 stack";
+    %vpi_call 2 80 "$display", "____________________________________________________________";
+    %set/v v011A7478_0, 0, 32;
+    %set/v v011E6278_0, 1, 1;
+    %set/v v011E5D50_0, 0, 32;
 T_3.4 ;
-    %load/v 8, v01130F80_0, 32;
+    %load/v 8, v011E5D50_0, 32;
    %cmpi/s 8, 3, 32;
     %jmp/0xz T_3.5, 5;
-    %wait E_011258D0;
-    %load/v 8, v01130F80_0, 32;
+    %load/v 8, v011E5D50_0, 32;
     %muli 8, 4, 32;
-    %ix/load 0, 32, 0;
-    %assign/v0 v011312F0_0, 0, 8;
+    %set/v v011A7478_0, 8, 32;
+    %wait E_011AD150;
+    %delay 1000, 0;
+    %vpi_call 2 88 "$display", "Time = %0t, FIFO[%0d] = %0d", $time, v011E5D50_0, &A<v011A7898, v011E5D50_0 >;
     %ix/load 0, 1, 0;
-    %load/vp0/s 8, v01130F80_0, 32;
-    %set/v v01130F80_0, 8, 32;
+    %load/vp0/s 8, v011E5D50_0, 32;
+    %set/v v011E5D50_0, 8, 32;
     %jmp T_3.4;
 T_3.5 ;
-    %vpi_call 2 63 "$display", "Time : %d , FIFOvalue : %d", $time, &A<v01130D70, 2>;
-    %wait E_011258D0;
-    %set/v v01130CC0_0, 1, 1;
-    %set/v v01130ED0_0, 0, 1;
-    %delay 60000, 0;
-    %set/v v01130CC0_0, 0, 1;
-    %vpi_call 2 69 "$display", "Time : %d , FIFOvalue : %d", $time, &A<v01130D70, 1>;
+    %wait E_011AD150;
+    %set/v v011E65E8_0, 1, 1;
+    %set/v v011E6278_0, 0, 1;
+    %delay 1000, 0;
+    %set/v v011E5D50_0, 0, 32;
+T_3.6 ;
+    %load/v 8, v011E5D50_0, 32;
+   %cmpi/s 8, 3, 32;
+    %jmp/0xz T_3.7, 5;
+    %vpi_call 2 96 "$display", "Time : %0t, dataout[%0d] = %0d", $time, v011E5D50_0, v011E63D8_0;
+    %wait E_011AD150;
+    %delay 1000, 0;
+    %ix/load 0, 1, 0;
+    %load/vp0/s 8, v011E5D50_0, 32;
+    %set/v v011E5D50_0, 8, 32;
+    %jmp T_3.6;
+T_3.7 ;
+    %wait E_011AD150;
+    %vpi_call 2 102 "$display", "FULL  = %0d", v011E6170_0;
+    %vpi_call 2 103 "$display", "EMPTY = %0d", v011E6430_0;
+    %set/v v011E65E8_0, 0, 1;
+    %vpi_call 2 105 "$display", "================================";
     %delay 20000, 0;
-    %vpi_call 2 70 "$finish";
+    %vpi_call 2 106 "$finish";
     %end;
     .thread T_3;
-    .scope S_01123550;
+    .scope S_011A5548;
 T_4 ;
-    %vpi_call 2 74 "$monitor", "Time : %d, D_in : %d, D_out : %d", $time, v011312F0_0, v01130C10_0;
-    %vpi_call 2 75 "$dumpvars", 1'sb0, S_01123550;
-    %vpi_call 2 75 "$dumpfile", "dump.vcd";
+    %vpi_call 2 109 "$dumpfile", "dump.vcd";
+    %vpi_call 2 110 "$dumpvars", 1'sb0, S_011A5548;
     %end;
     .thread T_4;
 # The file index is used to find the file name in the following table.

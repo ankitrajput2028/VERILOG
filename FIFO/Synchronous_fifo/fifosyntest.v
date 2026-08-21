@@ -20,59 +20,94 @@ initial begin
 
         rd_en=0;
         wr_en=0;
+        $display("Scenario1 checking empty port");
+        $display("______________________________");
         //scenario1--------------------------------------------------------------------------
+        #2
         $display("time : %d, Empty : %d", $time , empty); //checking empty port
 
         #10 rst =1;
+
+        $display("================================");
         //scenario2--------------------------------------------------------------------------------
+        $display("Scenario2 checking full port port");
+        $display("______________________________");
+        data_in = 0;
         wr_en = 1;
-        cs =1;
-        for (k = 0; k<FIFO_DEPTH; k = k+1) begin
-        @(posedge clk)
-            data_in <= k*2;
+        cs = 1;
+
+        for (k = 0; k < FIFO_DEPTH; k = k + 1) begin
+
+            data_in = k * 2;
+
+            @(posedge clk);
+            #1;
+
+            $display("Time = %0t, FIFO[%0d] = %0d",
+                    $time, k, F1.fifo[k]);
+
         end
-        @(posedge clk)
-        wr_en =0;
-        $display("time : %d, Full : %d, Empty : %d", $time , full , empty); // checking full port
+
+        wr_en = 0;
+
+        #1;
+
+        $display("FULL  = %0d", full);
+        $display("EMPTY = %0d", empty);
+        $display("================================");
 
         //scenario3-------------------------------------------------------------------------
+        $display("Scenario3 Writing after full stack (it doesn't write until read occurs)");
+        $display("______________________________________________________________________");
 
         @(posedge clk)
         wr_en =1;
+        $display("================================");
         repeat(2)
         begin
         @(posedge clk)
-            data_in <= k*3;// writing after full
-            $display("Time : %d , FIFOvalue : %d", $time , F1.fifo[1]);
+            data_in = k*3;// writing after full
+            $display("Time : %d , FIFOvalue : %d", $time , F1.fifo[0]);
         end
+        $display("================================");
         wr_en =0;
         #1 
         rst =0;
         #1
         rst =1;
         //scenario4-------------------------------------------------------------------------
-        k=0;
+        $display("Scenario4 Writing upto 3 stack and then reading upto 3 stack");
+        $display("____________________________________________________________");
+        data_in = 0;// first loading data
         wr_en=1;
-        data_in <= k*4;// first loading data
-        @(posedge clk)
-        for (k = 1; k<FIFOHALF-1; k = k+1) 
+        for (k = 0; k<FIFOHALF-1; k = k+1) 
         begin
+            data_in =  k*4;
             @(posedge clk)
-            data_in <=  k*4;
+            #1; // necessary so that data load in the fifo and then will watch it in terminal
+            $display("Time = %0t, FIFO[%0d] = %0d",
+            $time, k, F1.fifo[k]);
         end
-        $display("Time : %d , FIFOvalue : %d", $time , F1.fifo[2]);
         @(posedge clk)
         rd_en =1;// after 3rd clk edge empty should be high and automatically read should
         wr_en =0;// stop and last data out will be 8
-        
-        #60 rd_en =0;
-        $display("Time : %d , FIFOvalue : %d", $time , F1.fifo[1]);
+        #1
+       for (k = 0; k < 3; k = k + 1) begin
+            $display("Time : %0t, dataout[%0d] = %0d",
+                    $time, k, data_out);
+            @(posedge clk);
+            #1;
+        end
+        @(posedge clk)
+        $display("FULL  = %0d", full);
+        $display("EMPTY = %0d", empty);
+        rd_en = 0;
+        $display("================================");
         #20 $finish;
 end
-
 initial begin
-    $monitor("Time : %d, D_in : %d, D_out : %d",$time , data_in ,data_out);
-    $dumpvars(0,DUT); $dumpfile("dump.vcd");
+    $dumpfile("dump.vcd");
+    $dumpvars(0,DUT);
 end
 
 endmodule
