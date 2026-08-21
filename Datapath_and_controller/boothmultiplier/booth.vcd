@@ -1,0 +1,783 @@
+$date
+	Sat Mar 28 17:14:43 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module DUT $end
+$var wire 8 ! MUL [7:0] $end
+$var wire 1 " Q0 $end
+$var wire 1 # addsub $end
+$var wire 1 $ clrA $end
+$var wire 1 % clrQ $end
+$var wire 1 & clrff $end
+$var wire 5 ' count [4:0] $end
+$var wire 1 ( decr $end
+$var wire 1 ) done $end
+$var wire 1 * ldA $end
+$var wire 1 + ldM $end
+$var wire 1 , ldQ $end
+$var wire 1 - ldcnt $end
+$var wire 1 . qm1 $end
+$var wire 1 / sftA $end
+$var wire 1 0 sftQ $end
+$var reg 1 1 clk $end
+$var reg 5 2 data_in [4:0] $end
+$var reg 1 3 start $end
+$scope module B1 $end
+$var wire 5 4 A [4:0] $end
+$var wire 5 5 M [4:0] $end
+$var wire 8 6 MUL [7:0] $end
+$var wire 5 7 Q [4:0] $end
+$var wire 1 " Q0 $end
+$var wire 5 8 Z [4:0] $end
+$var wire 1 # addsub $end
+$var wire 1 9 clk $end
+$var wire 1 $ clrA $end
+$var wire 1 % clrQ $end
+$var wire 1 & clrff $end
+$var wire 5 : count [4:0] $end
+$var wire 5 ; data_in [4:0] $end
+$var wire 1 ( decr $end
+$var wire 1 * ldA $end
+$var wire 1 + ldM $end
+$var wire 1 , ldQ $end
+$var wire 1 - ldcnt $end
+$var wire 1 . qm1 $end
+$var wire 1 / sftA $end
+$var wire 1 0 sftQ $end
+$scope module ot $end
+$var wire 5 < in1 [4:0] $end
+$var wire 5 = in2 [4:0] $end
+$var wire 8 > out [7:0] $end
+$upscope $end
+$scope module AR $end
+$var wire 1 9 clk $end
+$var wire 1 $ clr $end
+$var wire 5 ? din [4:0] $end
+$var wire 1 @ in1 $end
+$var wire 1 * ld $end
+$var wire 1 / sft $end
+$var reg 5 A dout [4:0] $end
+$upscope $end
+$scope module QL $end
+$var wire 1 9 clk $end
+$var wire 1 % clr $end
+$var wire 5 B din [4:0] $end
+$var wire 1 C in1 $end
+$var wire 1 , ld $end
+$var wire 1 0 sft $end
+$var reg 5 D dout [4:0] $end
+$upscope $end
+$scope module CNT $end
+$var wire 1 9 clk $end
+$var wire 1 ( dec $end
+$var wire 1 - ld $end
+$var reg 5 E dout [4:0] $end
+$upscope $end
+$scope module ML $end
+$var wire 1 9 clk $end
+$var wire 5 F din [4:0] $end
+$var wire 1 + ld $end
+$var reg 5 G dout [4:0] $end
+$upscope $end
+$scope module ADSB $end
+$var wire 1 # as $end
+$var wire 5 H in1 [4:0] $end
+$var wire 5 I in2 [4:0] $end
+$var reg 5 J out [4:0] $end
+$upscope $end
+$scope module dff $end
+$var wire 1 9 clk $end
+$var wire 1 & clr $end
+$var wire 1 K din $end
+$var reg 1 L dout $end
+$upscope $end
+$upscope $end
+$scope module C1 $end
+$var wire 1 " Q0 $end
+$var wire 1 9 clk $end
+$var wire 5 M count [4:0] $end
+$var wire 1 . qm1 $end
+$var wire 1 N start $end
+$var reg 1 O addsub $end
+$var reg 1 P clrA $end
+$var reg 1 Q clrQ $end
+$var reg 1 R clrff $end
+$var reg 1 S decr $end
+$var reg 1 T done $end
+$var reg 1 U ldA $end
+$var reg 1 V ldM $end
+$var reg 1 W ldQ $end
+$var reg 1 X ldcnt $end
+$var reg 1 Y sftA $end
+$var reg 1 Z sftQ $end
+$var reg 3 [ state [2:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx [
+xZ
+xY
+xX
+xW
+xV
+xU
+xT
+xS
+xR
+xQ
+xP
+xO
+xN
+bx M
+xL
+xK
+bx J
+bx I
+bx H
+bx G
+bx F
+bx E
+bx D
+xC
+bx B
+bx A
+x@
+bx ?
+bx >
+bx =
+bx <
+bx ;
+bx :
+09
+bx 8
+bx 7
+bx 6
+bx 5
+bx 4
+x3
+bx 2
+01
+x0
+x/
+x.
+x-
+x,
+x+
+x*
+x)
+x(
+bx '
+x&
+x%
+x$
+x#
+x"
+bx !
+$end
+#3000
+13
+1N
+#5000
+b0 [
+11
+19
+#6000
+1X
+1-
+1Q
+1%
+1V
+1+
+1R
+1&
+1P
+1$
+#10000
+01
+09
+#14000
+b1011 2
+b1011 ;
+b1011 B
+b1011 F
+#15000
+0K
+0"
+b0 !
+b0 6
+b0 >
+0C
+0@
+b1 [
+0L
+0.
+b1011 G
+b1011 5
+b1011 I
+b101 E
+b101 '
+b101 :
+b101 M
+b0 D
+b0 7
+b0 =
+b0 A
+b0 4
+b0 <
+b0 H
+11
+19
+#16000
+0X
+0-
+1W
+1,
+0V
+0+
+0R
+0&
+0P
+0$
+0Q
+0%
+#20000
+01
+09
+#24000
+b110 2
+b110 ;
+b110 B
+b110 F
+#25000
+b110 !
+b110 6
+b110 >
+b110 D
+b110 7
+b110 =
+b10 [
+11
+19
+#26000
+0Z
+00
+0Y
+0/
+0W
+0,
+0S
+0(
+#30000
+01
+09
+#35000
+b11 [
+11
+19
+#40000
+01
+09
+#45000
+b110 [
+11
+19
+#46000
+1Z
+10
+1Y
+1/
+0U
+0*
+1S
+1(
+#50000
+01
+09
+#55000
+b11 !
+b11 6
+b11 >
+1K
+1"
+b11 [
+b100 E
+b100 '
+b100 :
+b100 M
+b11 D
+b11 7
+b11 =
+11
+19
+#56000
+0Z
+00
+0Y
+0/
+0S
+0(
+#60000
+01
+09
+#65000
+1L
+1.
+b100 [
+11
+19
+#66000
+b10101 J
+b10101 8
+b10101 ?
+1U
+1*
+0O
+0#
+#70000
+01
+09
+#75000
+b10100011 !
+b10100011 6
+b10100011 >
+1C
+1@
+b1010 J
+b1010 8
+b1010 ?
+b110 [
+b10101 A
+b10101 4
+b10101 <
+b10101 H
+11
+19
+#76000
+1Z
+10
+1Y
+1/
+0U
+0*
+1S
+1(
+#80000
+01
+09
+#85000
+0C
+b1111 J
+b1111 8
+b1111 ?
+b1010001 !
+b1010001 6
+b1010001 >
+b11010 A
+b11010 4
+b11010 <
+b11010 H
+b10001 D
+b10001 7
+b10001 =
+b11 E
+b11 '
+b11 :
+b11 M
+b11 [
+11
+19
+#86000
+0Z
+00
+0Y
+0/
+0S
+0(
+#90000
+01
+09
+#95000
+b110 [
+11
+19
+#96000
+1Z
+10
+1Y
+1/
+1S
+1(
+#100000
+01
+09
+#105000
+1C
+b10010 J
+b10010 8
+b10010 ?
+b10101000 !
+b10101000 6
+b10101000 >
+0K
+0"
+b11101 A
+b11101 4
+b11101 <
+b11101 H
+b1000 D
+b1000 7
+b1000 =
+b10 E
+b10 '
+b10 :
+b10 M
+b11 [
+11
+19
+#106000
+0Z
+00
+0Y
+0/
+0S
+0(
+#110000
+01
+09
+#115000
+b101 [
+0L
+0.
+11
+19
+#116000
+b1000 J
+b1000 8
+b1000 ?
+1U
+1*
+1O
+1#
+#120000
+01
+09
+#125000
+b1000 !
+b1000 6
+b1000 >
+0C
+0@
+b10011 J
+b10011 8
+b10011 ?
+b1000 A
+b1000 4
+b1000 <
+b1000 H
+b110 [
+11
+19
+#126000
+1Z
+10
+1Y
+1/
+0U
+0*
+1S
+1(
+#130000
+01
+09
+#135000
+b10000100 !
+b10000100 6
+b10000100 >
+b1111 J
+b1111 8
+b1111 ?
+b11 [
+b1 E
+b1 '
+b1 :
+b1 M
+b100 D
+b100 7
+b100 =
+b100 A
+b100 4
+b100 <
+b100 H
+11
+19
+#136000
+0Z
+00
+0Y
+0/
+0S
+0(
+#140000
+01
+09
+#145000
+b110 [
+11
+19
+#146000
+1Z
+10
+1Y
+1/
+1S
+1(
+#150000
+01
+09
+#155000
+b1000010 !
+b1000010 6
+b1000010 >
+b1101 J
+b1101 8
+b1101 ?
+b11 [
+b0 E
+b0 '
+b0 :
+b0 M
+b10 D
+b10 7
+b10 =
+b10 A
+b10 4
+b10 <
+b10 H
+11
+19
+#156000
+0Z
+00
+0Y
+0/
+0S
+0(
+#160000
+01
+09
+#165000
+b111 [
+11
+19
+#166000
+1T
+1)
+#170000
+01
+09
+#175000
+11
+19
+#180000
+01
+09
+#185000
+11
+19
+#190000
+01
+09
+#195000
+11
+19
+#200000
+01
+09
+#205000
+11
+19
+#210000
+01
+09
+#215000
+11
+19
+#220000
+01
+09
+#225000
+11
+19
+#230000
+01
+09
+#235000
+11
+19
+#240000
+01
+09
+#245000
+11
+19
+#250000
+01
+09
+#255000
+11
+19
+#260000
+01
+09
+#265000
+11
+19
+#270000
+01
+09
+#275000
+11
+19
+#280000
+01
+09
+#285000
+11
+19
+#290000
+01
+09
+#295000
+11
+19
+#300000
+01
+09
+#305000
+11
+19
+#310000
+01
+09
+#315000
+11
+19
+#320000
+01
+09
+#325000
+11
+19
+#330000
+01
+09
+#335000
+11
+19
+#340000
+01
+09
+#345000
+11
+19
+#350000
+01
+09
+#355000
+11
+19
+#360000
+01
+09
+#365000
+11
+19
+#370000
+01
+09
+#375000
+11
+19
+#380000
+01
+09
+#385000
+11
+19
+#390000
+01
+09
+#395000
+11
+19
+#400000
+01
+09
+#405000
+11
+19
+#410000
+01
+09
+#415000
+11
+19
+#420000
+01
+09
+#425000
+11
+19
+#430000
+01
+09
+#435000
+11
+19
+#440000
+01
+09
+#445000
+11
+19
+#450000
+01
+09
+#455000
+11
+19
+#460000
+01
+09
+#465000
+11
+19
+#470000
+01
+09
+#475000
+11
+19
+#480000
+01
+09
+#485000
+11
+19
+#490000
+01
+09
+#495000
+11
+19
+#500000
+01
+09
+#503000

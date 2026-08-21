@@ -1,0 +1,41 @@
+`timescale 1ns/1ps
+
+module reg_bank(rddata1,rddata2,sr1,sr2,clk,dr,write,wrdata);
+    input clk,write;
+    input [31:0] wrdata;
+    input [1:0] sr1,sr2,dr;
+    output reg[31:0] rddata1, rddata2;
+    reg [31:0] R0,R1,R2,R3; // reg[31:0] R[0:3];
+
+    always @(*) begin
+        case (sr1)
+            0: rddata1 = R0;
+            1: rddata1 = R1;
+            2: rddata1 = R2;
+            3: rddata1 = R3;
+
+            default: rddata1 = 32'hxxxxxxxx;
+        endcase
+    end
+
+    always @(*) begin
+        case (sr2)
+            0: rddata2 = R0;
+            1: rddata2 = R1;
+            2: rddata2 = R2;
+            3: rddata2 = R3;
+            default: rddata2 = 32'hxxxxxxxx;
+        endcase
+    end
+
+    always @(posedge clk) begin
+        if (write) begin
+            case (dr)
+                0: R0 <= wrdata;
+                1: R1 <= wrdata;
+                2: R2 <= wrdata;
+                3: R3 <= wrdata; 
+            endcase
+        end
+    end
+endmodule
