@@ -6,7 +6,7 @@ module bd_gen (clk,tx_en,rx_en);
     reg [9:0] rx_counter = 0;
 
     always @(posedge clk) begin
-        if (tx_counter == 5208) begin //calulated 
+        if (tx_counter == 5208) begin //calulated system clk 50MHZ and baude rate is 9600
             tx_counter = 0;
         end
         else 
